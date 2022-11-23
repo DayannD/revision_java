@@ -2,11 +2,11 @@ public class Tasse {
     double quantiteCafeMax;
     Cafe cafe;
 
-    public Tasse(){
-        this.quantiteCafeMax = 100D;
+    public Tasse(double quantite){
+        this.quantiteCafeMax = quantite;
     }
 
-    public Double boire(Double bu){
+    public double boire(double bu){
         this.cafe.quantiteLiquideMl-=bu;
         return this.cafe.quantiteLiquideMl;
     }

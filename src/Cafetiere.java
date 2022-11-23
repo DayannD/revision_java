@@ -5,7 +5,7 @@ public class Cafetiere {
         tasse.cafe = cafe;
     }
 
-    public void remplirTasse(Tasse tasse,TypeCafe typeCafe,Double cafe){
+    public void remplirTasse(Tasse tasse,TypeCafe typeCafe,double cafe){
         Cafe cafeChoice = new Cafe(typeCafe,cafe);
         tasse.cafe = cafeChoice;
     }

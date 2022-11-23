@@ -25,8 +25,8 @@ public class Main {
         ArrayList<Client> mesClientsEtrange = new ArrayList<Client>(
                 Arrays.asList(
                         new Client("Moka_600", new Cafe(TypeCafe.MOKA,600D), false),
-                        new Client("Moka_2000", new Cafe(TypeCafe.MOKA,2000D), new Tasse(2000)),
-                        new Client("Moka_2000", new Cafe(TypeCafe.MOKA,2000D), new Tasse(1000))
+                        new Client("Moka_2000", new Cafe(TypeCafe.MOKA,2000D), new Tasse(2000d)),
+                        new Client("Moka_2000", new Cafe(TypeCafe.MOKA,2000D), new Tasse(1000d))
                 )) ;
 
         Restaurant restoMesClientsEtrange = checkFactureTotal(mesClientsEtrange) ;

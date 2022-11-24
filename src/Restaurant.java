@@ -9,7 +9,7 @@ public class Restaurant {
 
     public double servir(Client client){
         this.cafetiere.remplirTasse(client.tasse,client.commandeCafe.typeCafe,client.tasse.quantiteCafeMax);
-        this.profit = client.valeurFacture;
+        this.profit += client.valeurFacture;
         return client.valeurFacture;
     }
 }

@@ -10,6 +10,10 @@ public enum TypeCafe {
         this.coutParMl = ml;
     }
 
+    public double getCoutParMl(){
+        return this.coutParMl;
+    }
+
     TypeCafe() {
 
     }

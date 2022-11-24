@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Restaurant resto = new Restaurant() ;
 
-        ArrayList<Client> mesClientsBasic = new ArrayList<Client>(
+        ArrayList<Client> mesClientsBasic  = new ArrayList<Client>(
                 Arrays.asList(
                         new Client("Moka_100", new Cafe(), true),
                         new Client("Java_100", new Cafe(TypeCafe.JAVA, 100D), true),

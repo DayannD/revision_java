@@ -7,24 +7,28 @@ public class Client {
 
     public Client(String nom,Cafe com,boolean isClient) throws Exception{
         if (com == null){
-            throw new Exception("DEHORS !!!!!");
+            //throw new Exception("DEHORS !!!!!");
+            System.out.println("coucou");
         } else if (com.typeCafe == TypeCafe.BATARD) {
-            throw new Exception("DEHORS !!!!!");
+           // throw new Exception("DEHORS !!!!!");
+            System.out.println("coucou");
         }
         if (isClient){
             this.valeurFacture += 2;
+            this.tasse = new Tasse(100d);
         }
         if(com.quantiteLiquideMl > 100d){
             this.tasse = new Tasse(500d);
             this.valeurFacture += 3;
-        } else{
-            this.tasse = new Tasse(100d);
         }
         this.nom = nom;
         this.commandeCafe = com;
     }
 
     public Client(String nom,Cafe com,Tasse tasse){
+        if(com.quantiteLiquideMl > 100d){
+            this.valeurFacture += 3;
+        }
         if (com.typeCafe == TypeCafe.BATARD){
             System.err.println("DEHORS");
             this.valeurFacture = 0;

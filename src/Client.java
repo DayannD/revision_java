@@ -1,51 +1,43 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Client {
-    Tasse tasse;
-    Cafe commandeCafe;
-    String nom;
-    double valeurFacture;
 
+    String nom ;
+    Cafe commandeCafe  ;
+    Tasse tasse ;
 
-    public Client(String nom,Cafe com,boolean isClient) throws Exception{
-        if (com == null){
-            //throw new Exception("DEHORS !!!!!");
-            System.out.println("coucou");
-        } else if (com.typeCafe == TypeCafe.BATARD) {
-           // throw new Exception("DEHORS !!!!!");
-            System.out.println("coucou");
-        }
-        if (isClient){
-            this.valeurFacture += 2;
-            this.tasse = new Tasse(100d);
-        }
-        if(com.quantiteLiquideMl > 100d){
-            this.tasse = new Tasse(500d);
-            this.valeurFacture += 3;
-        }
-        this.nom = nom;
-        this.commandeCafe = com;
+    static Map<Integer,List<Client>> mapClient =new HashMap<>();
+    double valeurFacture  ;
+
+    Client(String nom, Cafe commandeCafe, boolean avecTasse ) {
+        this.nom = nom ;
+        this.commandeCafe = commandeCafe ;
+
+        if(avecTasse)
+            tasse = new Tasse() ;
     }
 
-    public Client(String nom,Cafe com,Tasse tasse){
-        if(com.quantiteLiquideMl > 100d){
-            this.valeurFacture += 3;
-        }
-        if (com.typeCafe == TypeCafe.BATARD){
-            System.err.println("DEHORS");
-            this.valeurFacture = 0;
-            return;
-        } else if (com == null) {
-            System.err.println("DEHORS");
-            this.valeurFacture = 0;
-            return;
-        }
-            this.nom = nom;
-            this.commandeCafe = com;
-            this.tasse = tasse;
-            this.valeurFacture = tasse.quantiteCafeMax * com.typeCafe.getCoutParMl() ;
-        }
+    public Client(String nom, Cafe commandeCafe, Tasse tasse) {
+        this.nom = nom;
+        this.commandeCafe = commandeCafe;
+        this.tasse = tasse;
+    }
 
-    public Client(){
-        this.nom = "jean";
-        this.tasse = new Tasse(100D);
+    public Client() {
+        this.nom = "Jean" ;
+        this.tasse = new Tasse() ;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "nom='" + nom + '\'' +
+                ", commandeCafe=" + commandeCafe +
+                ", tasse=" + tasse +
+                ", valeurFacture=" + valeurFacture +
+                '}';
     }
 }

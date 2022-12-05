@@ -1,20 +1,18 @@
 public enum TypeCafe {
+
     JAVA(0.035),
     MOKA(0.025),
     TYPICA(0.027),
     BOURBON(0.030),
-    BATARD(0.00),;
-     private double coutParMl;
+    BATARD(0),
+    ;
 
-    TypeCafe(double ml) {
-        this.coutParMl = ml;
+    double coutParMl ;
+
+    private TypeCafe(double coutParMl) {
+        this.coutParMl = coutParMl;
     }
 
-    public double getCoutParMl(){
-        return this.coutParMl;
-    }
 
-    TypeCafe() {
 
-    }
 }

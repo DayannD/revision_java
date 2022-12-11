@@ -1,45 +1,43 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Client {
-    Tasse tasse;
-    Cafe commandeCafe;
-    String nom;
-    double valeurFacture;
 
+    String nom ;
+    Cafe commandeCafe  ;
+    Tasse tasse ;
 
-    public Client(String nom,Cafe com,boolean isClient){
-        if (com.typeCafe == TypeCafe.BATARD){
-            System.err.println("DEHORS");
-            this.valeurFacture = 0;
-            return;
-        } else if (com == null) {
-            System.err.println("DEHORS");
-            this.valeurFacture = 0;
-            return;
-        }
-        if (isClient){
-            this.valeurFacture += 2;
-        }
-        this.nom = nom;
-        this.commandeCafe = com;
-        this.tasse = new Tasse(100d);
+    static Map<Integer,List<Client>> mapClient =new HashMap<>();
+    double valeurFacture  ;
+
+    Client(String nom, Cafe commandeCafe, boolean avecTasse ) {
+        this.nom = nom ;
+        this.commandeCafe = commandeCafe ;
+
+        if(avecTasse)
+            tasse = new Tasse() ;
     }
 
-    public Client(String nom,Cafe com,Tasse tasse){
-        if (com.typeCafe == TypeCafe.BATARD){
-            System.err.println("DEHORS");
-            this.valeurFacture = 0;
-            return;
-        } else if (com == null) {
-            System.err.println("DEHORS");
-            this.valeurFacture = 0;
-            return;
-        }
-            this.nom = nom;
-            this.commandeCafe = com;
-            this.tasse = tasse;
-        }
+    public Client(String nom, Cafe commandeCafe, Tasse tasse) {
+        this.nom = nom;
+        this.commandeCafe = commandeCafe;
+        this.tasse = tasse;
+    }
 
-    public Client(){
-        this.nom = "jean";
-        this.tasse.quantiteCafeMax = 100D;
+    public Client() {
+        this.nom = "Jean" ;
+        this.tasse = new Tasse() ;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "nom='" + nom + '\'' +
+                ", commandeCafe=" + commandeCafe +
+                ", tasse=" + tasse +
+                ", valeurFacture=" + valeurFacture +
+                '}';
     }
 }

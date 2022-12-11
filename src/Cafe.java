@@ -1,16 +1,18 @@
-import java.lang.reflect.Type;
-
 public class Cafe {
-    TypeCafe typeCafe;
-    double quantiteLiquideMl;
 
-    public Cafe(){
-        this.typeCafe = TypeCafe.MOKA;
-        this.quantiteLiquideMl = 100D;
+
+
+    TypeCafe typeCafe ;
+    double quantiteLiquideMl ;
+
+    Cafe() {
+        this.typeCafe = TypeCafe.MOKA ;
+        this.quantiteLiquideMl = 100 ;
     }
 
-    public Cafe(TypeCafe typeCafe, double ml){
+    public Cafe(TypeCafe typeCafe, double quantiteLiquideMl) {
         this.typeCafe = typeCafe;
-        this.quantiteLiquideMl = ml;
+        this.quantiteLiquideMl = quantiteLiquideMl;
     }
+
 }

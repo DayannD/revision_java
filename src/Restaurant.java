@@ -1,15 +1,73 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Restaurant {
 
-    Cafetiere cafetiere;
-    double profit;
+    Cafetiere cafetiere ;
+    double profit ;
 
-    public Restaurant(){
-        this.cafetiere = new Cafetiere();
+    List<Client> listeClientExpulse;
+
+    ArrayList<Client> listeClientServi;
+
+    private String nom;
+
+    public Restaurant(String nom){
+        this.nom = nom;
+        cafetiere = new Cafetiere() ;
+        this.listeClientServi = new ArrayList<>();
+        listeClientExpulse = new ArrayList<>();
     }
 
-    public double servir(Client client){
-        this.cafetiere.remplirTasse(client.tasse,client.commandeCafe.typeCafe,client.tasse.quantiteCafeMax);
-        this.profit = client.valeurFacture;
-        return client.valeurFacture;
+    Restaurant() {
+        this.nom = "Le Restaurant";
+        cafetiere = new Cafetiere() ;
+        this.listeClientServi = new ArrayList<>();
+        listeClientExpulse = new ArrayList<>();
+
+    }
+
+    boolean servir(Client client) {
+
+        double valeurFacture = 0 ;
+
+        // Verification Si Client Valide
+        if(client.commandeCafe == null || client.commandeCafe.typeCafe == TypeCafe.BATARD)
+        {
+            valeurFacture = 0 ;
+            System.out.println("Hors de mon resto");
+            return false ;
+        }
+
+        // Verification Si client Tasse
+        if(client.tasse == null)
+        {
+            if(client.commandeCafe.quantiteLiquideMl > 100)
+            {
+                valeurFacture += 3 ;
+                client.tasse = new Tasse(500) ;
+            }
+            else
+            {
+                valeurFacture += 2 ;
+                client.tasse = new Tasse() ;
+            }
+        }
+
+        // Facture Mon Client
+        valeurFacture += client.commandeCafe.typeCafe.coutParMl * client.commandeCafe.quantiteLiquideMl ;
+
+        // Remplit tasse
+        cafetiere.remplirTasse(client.tasse, client.commandeCafe.typeCafe, client.commandeCafe.quantiteLiquideMl);
+
+        profit += valeurFacture ;
+
+        client.valeurFacture = valeurFacture ;
+        return true;
+    }
+
+    public String getNom() {
+        return nom;
     }
 }

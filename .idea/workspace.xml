@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6988e14-4848-4d84-b088-36221e4e6812" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="92663496-3a24-4ffb-a01d-a114fd1cfa89" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/BanqueDeDonne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cafe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cafe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cafetiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cafetiere.java" afterDir="false" />
@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tasse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TypeCafe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TypeCafe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,6 +42,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -50,6 +52,17 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+>>>>>>> 6ee85b272e371259938f1f3a37093d369d9af746
   }
 }]]></component>
   <component name="RunManager">
@@ -69,12 +82,22 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="e6988e14-4848-4d84-b088-36221e4e6812" name="Changes" comment="" />
+=======
+      <changelist id="92663496-3a24-4ffb-a01d-a114fd1cfa89" name="Changes" comment="" />
+>>>>>>> 6ee85b272e371259938f1f3a37093d369d9af746
       <created>1669194950630</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669194950630</updated>
+<<<<<<< HEAD
       <workItem from="1669241888655" duration="697000" />
+=======
+      <workItem from="1669370007947" duration="8205000" />
+      <workItem from="1670227761239" duration="10464000" />
+      <workItem from="1670246957371" duration="7019000" />
+>>>>>>> 6ee85b272e371259938f1f3a37093d369d9af746
     </task>
     <servers />
   </component>

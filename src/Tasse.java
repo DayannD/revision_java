@@ -1,17 +1,24 @@
 public class Tasse {
-    double quantiteCafeMax;
-    Cafe cafe;
+    double quantiteCafeMax ;
+    Cafe cafe ;
 
-    public Tasse(double quantite){
-        this.quantiteCafeMax = quantite;
+    Tasse() {
+        quantiteCafeMax = 100 ;
     }
 
-    public double boire(double bu){
-        this.cafe.quantiteLiquideMl-=bu;
-        return this.cafe.quantiteLiquideMl;
+    public Tasse(double quantiteCafeMax) {
+        super();
+        this.quantiteCafeMax = quantiteCafeMax;
     }
 
-    public void boire(){
-        this.cafe.quantiteLiquideMl = 0D;
+
+    double boire(double qtBut) {
+        cafe.quantiteLiquideMl = cafe.quantiteLiquideMl - qtBut ;
+        return cafe.quantiteLiquideMl ;
     }
+
+    void boire() {
+        cafe.quantiteLiquideMl = 0 ;
+    }
+
 }

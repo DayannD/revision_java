@@ -1,75 +1,50 @@
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 public class Main {
-    public static void main(String[] args) {
-        Restaurant resto = new Restaurant() ;
+    public static void main(String[] args) throws Exception {
 
-        ArrayList<Client> mesClientsBasic = new ArrayList<Client>(
-                Arrays.asList(
-                        new Client("Moka_100", new Cafe(), true),
-                        new Client("Java_100", new Cafe(TypeCafe.JAVA, 100D), true),
-                        new Client("Typica_100", new Cafe(TypeCafe.TYPICA, 100D), true),
-                        new Client("Bourbon_100", new Cafe(TypeCafe.BOURBON, 100D), true)
-                )) ;
+        Random rand = new Random();
 
-        Restaurant restoMesClientsBasic = checkFactureTotal(mesClientsBasic) ;
-
-        int checkBasics = JOptionPane.showConfirmDialog(null, "Les petits clients aiment bien le café ! "
-                + "\n\nTu devrais avoir fait environ 11.7 en profit"
-                + "\nTu a fais " + restoMesClientsBasic.profit
-                + "\n\nC'est réussi ? ") ;
+        List<Restaurant> resto = new ArrayList<>(Arrays.asList(
+                        new Restaurant(),
+                        new Restaurant("Une tasse de joie"),
+                        new Restaurant("Latte sur les Rochers")
+                )
+        );
 
 
-        ArrayList<Client> mesClientsEtrange = new ArrayList<Client>(
-                Arrays.asList(
-                        new Client("Moka_600", new Cafe(TypeCafe.MOKA,600D), false),
-                        new Client("Moka_2000", new Cafe(TypeCafe.MOKA,2000D), new Tasse(2000d)),
-                        new Client("Moka_2000", new Cafe(TypeCafe.MOKA,2000D), new Tasse(1000d))
-                )) ;
+        for (Integer i = 0; i < 3 ;i++){
+            List<Client> client = new ArrayList<>();
+            for (int j = 0; j < 20;j++){
+                client.add(new Client(
+                        BanqueDeDonne.listeNoms.get(rand.nextInt(BanqueDeDonne.listeNoms.size())),
+                        BanqueDeDonne.listeCommandes.get(rand.nextInt(BanqueDeDonne.listeCommandes.size())),
+                        BanqueDeDonne.listeTasses.get(rand.nextInt(BanqueDeDonne.listeTasses.size()))
+                ));
+            }
+            Client.mapClient.put(i,client);
+        }
 
-        Restaurant restoMesClientsEtrange = checkFactureTotal(mesClientsEtrange) ;
-        System.out.println(restoMesClientsEtrange.profit);
-        int checkEtranges = JOptionPane.showConfirmDialog(null, "Même les clients étranges aiment bien le café ! "
-                + "\n\nTu devrais avoir fait environs 118.0 en profit"
-                + "\nTu a fais " + restoMesClientsEtrange.profit
-                + "\n\nMon Client 1 devrait avoir 500ml de café"
-                + "\nIl a " + mesClientsEtrange.get(0).tasse.cafe.quantiteLiquideMl
-                + "\n\nMon Client 2 devrait avoir 2000ml de café et être facturé 50"
-                + "\nIl a " + mesClientsEtrange.get(1).tasse.cafe.quantiteLiquideMl + "ml de café facturé à " + mesClientsEtrange.get(1).valeurFacture
-                + "\n\nMon Client 3 devrait avoir 1000ml de café et être facturé 50"
-                + "\nIl a " + mesClientsEtrange.get(2).tasse.cafe.quantiteLiquideMl + "ml de café facturé à " + mesClientsEtrange.get(2).valeurFacture
-                + "\n\nC'est réussi ? ") ;
+        for (List<Client> clientList: Client.mapClient.values()
+             ) {
+            for (Client client:
+                 clientList) {
+                Restaurant restaurant = resto.get(rand.nextInt(resto.size()));
+                if(restaurant.servir(client)){
+                    restaurant.listeClientServi.add(client);
+                }else {
+                    restaurant.listeClientExpulse.add(client);
+                }
+            }
+        }
 
-        ArrayList<Client> mesClientsInacceptable = new ArrayList<Client>(
-                Arrays.asList(
-                        new Client(),
-                        new Client("Batard_STasse", new Cafe(TypeCafe.BATARD, 600D), false),
-                        new Client("Batard_ATasse", new Cafe(TypeCafe.BATARD, 600D), true),
-                        new Client("Sans_Commande", null, false)
-                )) ;
-
-        Restaurant restoMesClientsInacceptable = checkFactureTotal(mesClientsInacceptable) ;
-
-        int checkInacceptables = JOptionPane.showConfirmDialog(null, "Aucun de ces client n'est acceptable ! Aucun argent a faire avec ces gens !"
-                + "\n\nTu devrais faire un profit de 0.0"
-                + "\nTu a fait un profit de " + restoMesClientsInacceptable.profit
-                + "\n\nC'est réussi ? ") ;
-
-
-        Client devientBatard = new Client("Batard_STasse",new Cafe(TypeCafe.JAVA, 100D), new Tasse(200)) ;
-        devientBatard.tasse.cafe = new Cafe() ;
-        restoMesClientsBasic.servir(devientBatard) ;
-
-        int checkBatard = JOptionPane.showConfirmDialog(null,"Mon client devrait avoir 200ml de café batard (Si tout fonctionne correctement)"
-                +"\nMon client a " + devientBatard.tasse.cafe.quantiteLiquideMl + " ml de café " + devientBatard.tasse.cafe.typeCafe.name()
-                + "\n\nC'est réussi ? ") ;
-
-        if(checkBasics == 0 && checkEtranges == 0 && checkInacceptables == 0 && checkBatard == 0)
-            JOptionPane.showMessageDialog(null, "Bravo tu as réussi cet exo ! Toujours plus simple non ?");
-        else
-            JOptionPane.showMessageDialog(null, "Quelque chose ne fonctionne pas :/ Dommage ! N'hésite pas à demander si tu as besoin d'aide ! ");
+        System.out.println(resto.get(0).getNom() +" j'ai servi "
+                + resto.get(0).listeClientServi.size() +" client " + " et j'en est expulsé "+
+                resto.get(0).listeClientExpulse.size());
 
     }
 

@@ -1,15 +1,11 @@
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-         String addition = "non payer";
+        String addition = "non payer";
         JFrame frame = new JFrame();
         int voler = 0;
         Restaurant restaurant = new Restaurant();
@@ -44,7 +40,7 @@ public class Main {
             }
 
             JOptionPane optionPane = new JOptionPane();
-            JSlider slider = getSlider(optionPane);
+            JSlider slider = getSlider(optionPane,tailleTasse);
             optionPane.setMessage(new Object[] { "Select a value: ", slider });
             optionPane.setMessageType(JOptionPane.QUESTION_MESSAGE);
             optionPane.setOptionType(JOptionPane.OK_CANCEL_OPTION);
@@ -86,10 +82,12 @@ public class Main {
                     Integer pourboire = JOptionPane.showConfirmDialog(frame, "Voulez-vous laisser un pourboire? ");
                     if (pourboire == 0){
                         JOptionPane.showMessageDialog(frame, "Merci d'avoir choisis notre restaurant,Au revoir");
+                        addition="payer";
                         break;
                     }else {
                         JOptionPane.showMessageDialog(frame,
                                 "Merci d'avoir choisis notre restaurant,voici votre monnaie"+Math.abs(payer)+"Au revoir");
+                        addition="payer";
                         break;
                     }
 
@@ -127,8 +125,8 @@ public class Main {
         return client;
     }
 
-    static JSlider getSlider(final JOptionPane optionPane) {
-        JSlider slider = new JSlider(50,500);
+    static JSlider getSlider(final JOptionPane optionPane,int tailleTasse) {
+        JSlider slider = new JSlider(50,tailleTasse);
         slider.setMajorTickSpacing(50);
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);

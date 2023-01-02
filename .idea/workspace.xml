@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92663496-3a24-4ffb-a01d-a114fd1cfa89" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/CodeErreur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/Erreur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/ErreurCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tddexo/Ballon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/BallonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CafetiereTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revisionJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/revisionJava.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tasse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,6 +43,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="2HwT2IvN1qdcqQFvxniwVBGJqgi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -54,17 +63,18 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/utilisateur/Desktop/Exo/revisionJava",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "configurable.group.tools"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.exception.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="revisionJava" />
@@ -72,51 +82,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Maven.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Maven.Main" />
+    <configuration name="BallonTest.ajoutBallon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="revisionJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Maven.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BallonTest" />
+      <option name="METHOD_NAME" value="ajoutBallon" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Poo.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Poo.Main" />
+    <configuration name="BallonTest.ballonExplose" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="revisionJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Poo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BallonTest" />
+      <option name="METHOD_NAME" value="ballonExplose" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="exception.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exception.Main" />
+    <configuration name="BallonTest.gonfleBallon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="revisionJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exception.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BallonTest" />
+      <option name="METHOD_NAME" value="gonfleBallon" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CafetiereTest.client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="revisionJava" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CafetiereTest" />
+      <option name="METHOD_NAME" value="client" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.exception.Main" />
-        <item itemvalue="Application.Maven.Main" />
-        <item itemvalue="Application.Poo.Main" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.BallonTest.ballonExplose" />
+        <item itemvalue="JUnit.BallonTest.gonfleBallon" />
+        <item itemvalue="JUnit.BallonTest.ajoutBallon" />
+        <item itemvalue="JUnit.CafetiereTest.client" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +144,10 @@
       <workItem from="1670227761239" duration="10464000" />
       <workItem from="1670246957371" duration="8826000" />
       <workItem from="1670321829163" duration="10648000" />
-      <workItem from="1670407187275" duration="13166000" />
+      <workItem from="1670407187275" duration="13447000" />
+      <workItem from="1670833811325" duration="126000" />
+      <workItem from="1672232995188" duration="8314000" />
+      <workItem from="1672665393209" duration="4608000" />
     </task>
     <servers />
   </component>
@@ -149,5 +164,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

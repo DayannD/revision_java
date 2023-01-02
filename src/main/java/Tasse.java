@@ -13,8 +13,12 @@ public class Tasse {
 
 
     double boire(double qtBut) {
-        cafe.quantiteLiquideMl = cafe.quantiteLiquideMl - qtBut ;
-        return cafe.quantiteLiquideMl ;
+        if (qtBut > this.cafe.quantiteLiquideMl){
+            return this.cafe.quantiteLiquideMl = 0;
+        }
+
+        this.cafe.quantiteLiquideMl = cafe.quantiteLiquideMl - qtBut ;
+        return this.cafe.quantiteLiquideMl ;
     }
 
     void boire() {
